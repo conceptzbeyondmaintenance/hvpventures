@@ -1,4 +1,4 @@
-export const BROCHURE_URL = '/hvp-ventures-agar-agar-e-brochure-2026.pdf'
+export const BROCHURE_URL = import.meta.env.BASE_URL + 'hvp-ventures-agar-agar-e-brochure-2026.pdf'
 export const BROCHURE_FILENAME = 'HVP-Ventures-Agar-Agar-E-Brochure-2026.pdf'
 
 export const CONTACT = {

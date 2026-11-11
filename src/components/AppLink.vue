@@ -7,7 +7,7 @@ const props = defineProps({
 })
 
 const href = computed(() =>
-  /^(http|\/|mailto:)/.test(props.to) ? props.to : `/#${props.to}`,
+  /^(http|\/|mailto:)/.test(props.to) ? props.to : `#${props.to}`,
 )
 </script>
 

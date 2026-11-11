@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # HVP Ventures — agar agar supplier site (Vue 3 + Vite)
 
 Vue port of the "Create Red Ventures Website" Figma Make design.
@@ -24,3 +25,7 @@ npm run build    # outputs to dist/
 - FAQ: `[Insert certificate numbers and issuing bodies before publishing.]`
 - Contact form only shows a "Preview only" status; it needs a form endpoint wired up.
 - Email is spelled `red.venutres26@gmail.com` in the design; confirm whether that's intended.
+=======
+# hvpventures
+hvpventures
+>>>>>>> dee4d4e7387af14a9391babf8aac0f33fbc364ee
