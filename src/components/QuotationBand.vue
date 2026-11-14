@@ -1,5 +1,7 @@
 <script setup>
 import AppLink from './AppLink.vue'
+import Icon from './Icon.vue'
+import SeaArt from './SeaArt.vue'
 
 defineProps({
   title: { type: String, required: true },
@@ -8,11 +10,14 @@ defineProps({
 </script>
 
 <template>
-  <section class="about-closing quotation-band">
-    <div>
-      <div class="about-closing__title">{{ title }}</div>
-      <p><slot /></p>
+  <section class="cta-band">
+    <SeaArt />
+    <div class="container cta-band__inner">
+      <div>
+        <h2>{{ title }}</h2>
+        <p><slot /></p>
+      </div>
+      <AppLink to="contact" class="button button--light">{{ actionLabel }}<Icon name="arrow" /></AppLink>
     </div>
-    <AppLink to="contact" class="button quotation-band__button">{{ actionLabel }}<span aria-hidden="true">↗</span></AppLink>
   </section>
 </template>

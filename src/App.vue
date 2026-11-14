@@ -36,7 +36,7 @@ const current = computed(() => pages[page.value] || GradePage)
 
 <template>
   <SiteHeader :page="page" />
-  <main class="shell" :data-page="pageNames[page]">
+  <main :data-page="pageNames[page]">
     <component :is="current" :id="current === GradePage ? page : undefined" :key="page" />
   </main>
   <FloatingBrochure :page="page" />

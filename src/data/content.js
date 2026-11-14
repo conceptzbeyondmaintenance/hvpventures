@@ -20,9 +20,9 @@ export const pageNames = {
 }
 
 export const products = [
-  { title: 'Food grade agar agar', description: 'Food grade agar agar for jellies, desserts, confectionery and vegan gummies. Agar sets firmer and at a higher temperature than gelatin.', page: 'food-grade-agar-agar', link: 'food grade agar agar specifications' },
-  { title: 'Bacteriological agar', description: 'Bacteriological agar for microbial culture media, including plate count and selective media, where consistent gel strength and clarity matter.', page: 'bacteriological-agar', link: 'bacteriological agar grades' },
-  { title: 'Technical grade agar agar', description: 'Technical grade agar agar for industrial and cosmetic gel formulations and other non-food applications.', page: 'technical-grade-agar-agar', link: 'technical grade agar agar grades' },
+  { icon: 'food', tone: 'tone-food', tag: 'E406', title: 'Food grade agar agar', description: 'Food grade agar agar for jellies, desserts, confectionery and vegan gummies. Agar sets firmer and at a higher temperature than gelatin.', page: 'food-grade-agar-agar', link: 'food grade agar agar specifications' },
+  { icon: 'lab', tone: 'tone-lab', tag: 'Culture media', title: 'Bacteriological agar', description: 'Bacteriological agar for microbial culture media, including plate count and selective media, where consistent gel strength and clarity matter.', page: 'bacteriological-agar', link: 'bacteriological agar grades' },
+  { icon: 'factory', tone: 'tone-tech', tag: 'Non-food', title: 'Technical grade agar agar', description: 'Technical grade agar agar for industrial and cosmetic gel formulations and other non-food applications.', page: 'technical-grade-agar-agar', link: 'technical grade agar agar grades' },
 ]
 
 export const gradeData = {
@@ -85,4 +85,27 @@ export const processSteps = [
   ['02', 'Samples to your lab', 'Test them your way, with no obligation.'],
   ['03', 'Approve and quote', 'We quote for your volume and port.'],
   ['04', 'Ship with documents', 'Certificate pack and batch COA included.'],
+]
+
+export const stats = [
+  ['3', 'Product grades', 'Food, bacteriological, technical'],
+  ['GS600–1000', 'Gel strength range', 'g/cm², plus custom to order'],
+  ['25 kg', 'Standard bag', 'Bulk orders on FOB or CIF terms'],
+  ['3', 'Origin countries', 'Indonesia, Japan and India'],
+]
+
+export const applications = [
+  { icon: 'food', title: 'Food and confectionery', copy: 'Jellies, desserts, vegan gummies, bakery fillings and glazes.', page: 'food-grade-agar-agar' },
+  { icon: 'lab', title: 'Microbiology', copy: 'Plate count, selective and differential culture media.', page: 'bacteriological-agar' },
+  { icon: 'drop', title: 'Cosmetics and industry', copy: 'Cosmetic, personal care and industrial gel formulations.', page: 'technical-grade-agar-agar' },
+  { icon: 'pill', title: 'Pharma and nutraceutical', copy: 'Gelling, thickening and suspending excipient in selected formulations.', page: 'faq' },
+]
+
+export const certifications = ['FSSC 22000', 'HACCP', 'Halal', 'Kosher']
+
+export const tradeFacts = [
+  ['Packaging', '25 kg bags'],
+  ['Trade terms', 'FOB or CIF'],
+  ['HS code', '1302.31'],
+  ['Documents', 'Certificate pack + batch COA'],
 ]
