@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>HVP Ventures — Agar Agar E-Brochure 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+<style>
+  /* Source for public/hvp-ventures-agar-agar-e-brochure-2026.pdf — see README for the export command. */
+  @page { size: 1280px 720px; margin: 0; }
+  :root { --navy:#0a2f3c; --deep:#0e4253; --teal:#12897b; --teal-dark:#0d6f64; --aqua:#e6f4f1; --coral:#c2553f; --sand:#f6f4ee; --ink:#12242b; --muted:#56686f; --line:#dde5e7; --mint:#8fe0d2; }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: "Inter", sans-serif; color: var(--ink); background: #333; }
+  .slide { position: relative; width: 1280px; height: 720px; padding: 44px 64px 0; overflow: hidden; background: #fff; page-break-after: always; break-after: page; }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
+  h1, h2, h3, .num { font-family: "Manrope", sans-serif; letter-spacing: -.02em; color: var(--navy); }
+  h2 { font-size: 50px; font-weight: 800; line-height: 1.1; }
+  h2 em, h1 em { font-style: normal; color: var(--teal); }
+  .lead { margin-top: 16px; max-width: 900px; font-size: 20px; line-height: 1.5; color: var(--muted); }
+  .kicker { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; font-family: "Manrope", sans-serif; font-weight: 700; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: var(--teal-dark); }
+  .kicker svg { width: 36px; height: 36px; }
+  .kicker::after { content: ""; width: 34px; height: 2px; background: var(--coral); }
+  .foot { position: absolute; left: 64px; right: 64px; bottom: 26px; display: flex; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--line); font-size: 12px; letter-spacing: .06em; color: var(--muted); }
+  .foot b { color: var(--teal-dark); }
+  .corner { position: absolute; right: -60px; top: -90px; width: 330px; height: 330px; opacity: .9; }
+  .grid { display: grid; gap: 24px; }
+  .c2 { grid-template-columns: 1fr 1fr; } .c3 { grid-template-columns: repeat(3, 1fr); } .c4 { grid-template-columns: repeat(4, 1fr); }
+  .card { padding: 24px 28px; border: 1px solid var(--line); border-radius: 16px; background: var(--sand); }
+  .card h3 { font-size: 23px; font-weight: 700; }
+  .card p { margin-top: 12px; font-size: 16.5px; line-height: 1.5; color: var(--muted); }
+  .badge { display: inline-grid; place-items: center; width: 44px; height: 44px; margin-bottom: 12px; border-radius: 50%; background: var(--teal); color: #fff; font-family: "Manrope", sans-serif; font-weight: 800; font-size: 15px; }
+  .label { font-family: "Manrope", sans-serif; font-weight: 700; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--teal-dark); }
+
+  /* dark slides */
+  .dark { color: #fff; background: linear-gradient(135deg, #072530 0%, var(--deep) 55%, #12776f 100%); }
+  .dark h1, .dark h2, .dark h3 { color: #fff; }
+  .dark h1 em, .dark h2 em { color: var(--mint); }
+  .art { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .brand { position: relative; display: flex; align-items: center; gap: 16px; font-family: "Manrope", sans-serif; font-weight: 800; font-size: 20px; letter-spacing: .22em; }
+  .brand svg { width: 54px; height: 54px; }
+  .rel { position: relative; }
+
+  /* stats */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 8px; }
+  .stat { display: flex; align-items: center; gap: 18px; }
+  .stat .num { font-size: 48px; font-weight: 800; color: var(--teal-dark); line-height: 1; }
+  .stat span { font-size: 17px; color: var(--muted); line-height: 1.35; }
+
+  /* grades */
+  .grade { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--sand); }
+  .grade header { padding: 22px 28px; color: #fff; }
+  .grade header h3 { color: #fff; font-size: 28px; }
+  .grade header small { font-family: "Manrope", sans-serif; font-weight: 700; font-size: 12px; letter-spacing: .2em; opacity: .8; }
+  .grade .body { padding: 24px 28px 26px; font-size: 17px; }
+  .grade .body p { margin: 6px 0 20px; font-weight: 500; }
+  .grade ul { margin-top: 8px; list-style: none; }
+  .grade li { position: relative; padding-left: 20px; line-height: 1.6; color: var(--muted); }
+  .grade li::before { content: ""; position: absolute; left: 0; top: 11px; width: 8px; height: 8px; border-radius: 50%; background: var(--teal); }
+  .t-food { background: linear-gradient(135deg, #b9492f, #dd8a52); } .t-lab { background: linear-gradient(135deg, #0e4253, #12897b); } .t-tech { background: linear-gradient(135deg, #23323f, #4a6a7c); }
+  .callout { margin-top: 22px; padding: 16px 26px; border-radius: 12px; background: var(--aqua); color: var(--teal-dark); font-weight: 600; font-size: 17px; }
+
+  /* scale */
+  .scale { margin-top: 34px; padding: 44px 56px 40px; border-radius: 20px; background: var(--sand); border: 1px solid var(--line); }
+  .scale__labels, .scale__ticks, .scale__notes { position: relative; height: 62px; }
+  .scale__labels > div, .scale__notes > div, .scale__ticks > span { position: absolute; transform: translateX(-50%); white-space: nowrap; }
+  .scale__labels .num { font-size: 30px; font-weight: 800; }
+  .bar { position: relative; height: 44px; border-radius: 8px; background: #cfe6e1; overflow: hidden; }
+  .bar i { position: absolute; top: 0; bottom: 0; }
+  .scale__ticks { height: 34px; margin-top: 10px; font-size: 14px; color: var(--muted); }
+  .scale__notes { height: 30px; font-weight: 600; font-size: 15px; color: var(--navy); }
+  .dashed { margin-top: 26px; padding: 14px; border: 2px dashed var(--teal); border-radius: 999px; text-align: center; font-family: "Manrope", sans-serif; font-weight: 700; font-size: 18px; letter-spacing: .04em; color: var(--teal-dark); }
+
+  /* table */
+  table { width: 100%; margin-top: 22px; border-collapse: collapse; font-size: 16.5px; border-radius: 12px; overflow: hidden; }
+  th, td { padding: 7.5px 24px; text-align: left; }
+  thead th { background: var(--navy); color: #fff; font-family: "Manrope", sans-serif; font-size: 12.5px; letter-spacing: .18em; }
+  tbody tr:nth-child(odd) { background: var(--sand); }
+  tbody th { width: 40%; font-weight: 600; color: var(--navy); }
+  tbody td { font-weight: 600; color: var(--teal-dark); }
+  .note { margin-top: 14px; font-size: 15px; color: var(--muted); }
+
+  /* certs */
+  .cert { display: flex; align-items: center; gap: 22px; padding: 30px; }
+  .cert .seal { display: grid; place-items: center; width: 68px; height: 68px; flex: none; border-radius: 50%; background: var(--teal); }
+  .cert .seal svg { width: 32px; height: 32px; }
+  .cert h3 { font-size: 30px; }
+  .cert p { margin-top: 4px; }
+  .ship { margin-top: 24px; }
+  .ship ul { margin-top: 8px; list-style: none; font-size: 19px; font-weight: 600; color: var(--navy); line-height: 1.7; }
+  .ship li::before { content: "✓"; margin-right: 12px; color: var(--teal); }
+
+  /* closing */
+  .steps { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 50px; }
+  .steps::before { content: ""; position: absolute; left: 28px; right: 25%; top: 28px; border-top: 2px dashed rgba(255,255,255,.35); }
+  .step .badge { position: relative; width: 56px; height: 56px; background: #fff; color: var(--navy); }
+  .step h3 { font-size: 22px; }
+  .step p { margin-top: 8px; font-size: 16px; line-height: 1.45; color: rgba(255,255,255,.8); }
+  .contact { position: absolute; left: 64px; right: 64px; bottom: 44px; display: flex; justify-content: space-between; align-items: flex-end; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.25); }
+  .contact strong { font-family: "Manrope", sans-serif; font-size: 26px; }
+  .contact small { display: block; margin-bottom: 4px; font-size: 12px; letter-spacing: .2em; color: var(--mint); }
+  .contact div:last-child { text-align: right; font-size: 19px; line-height: 1.5; font-weight: 500; }
+  @media screen { .slide { margin: 20px auto; } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="mark" viewBox="0 0 48 48">
+      <rect width="48" height="48" rx="12" fill="#0a2f3c" />
+      <path d="M24 40V20M24 30c-6-1-9-5-9-11M24 26c6-1 9-5 9-11M24 20c-2-4-1-8 0-11" fill="none" stroke="#6fd3c4" stroke-width="2.6" stroke-linecap="round" />
+      <path d="M9 38c3-2.5 6-2.5 9 0s6 2.5 9 0 6-2.5 9 0" fill="none" stroke="#c2553f" stroke-width="2.6" stroke-linecap="round" />
+    </symbol>
+    <symbol id="mark-light" viewBox="0 0 48 48">
+      <rect x="1" y="1" width="46" height="46" rx="12" fill="rgba(255,255,255,.1)" stroke="rgba(255,255,255,.4)" />
+      <path d="M24 40V20M24 30c-6-1-9-5-9-11M24 26c6-1 9-5 9-11M24 20c-2-4-1-8 0-11" fill="none" stroke="#8fe0d2" stroke-width="2.6" stroke-linecap="round" />
+      <path d="M9 38c3-2.5 6-2.5 9 0s6 2.5 9 0 6-2.5 9 0" fill="none" stroke="#e08a6f" stroke-width="2.6" stroke-linecap="round" />
+    </symbol>
+    <symbol id="sea" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice">
+      <g fill="none" stroke-linecap="round">
+        <g stroke="#8fe0d2" stroke-opacity=".18" stroke-width="10">
+          <path d="M1180 720c-10-150 50-210 20-340s40-200 10-300" />
+          <path d="M1195 520c50-30 90-80 90-150M1205 380c-50-30-80-70-80-130M1215 240c40-25 60-60 62-110" />
+          <path d="M1340 720c20-120-30-190 0-300s-20-170 10-250" />
+          <path d="M1338 500c-45-25-70-65-72-120M1345 330c40-25 60-60 60-105" />
+        </g>
+        <g stroke="#e08a6f" stroke-opacity=".22" stroke-width="8">
+          <path d="M1050 720c10-90-30-140-10-230s-20-130 0-190" />
+          <path d="M1042 560c40-20 60-55 60-100M1040 420c-35-20-55-50-55-90" />
+        </g>
+        <g stroke="#fff" stroke-opacity=".06" stroke-width="2">
+          <path d="M0 160c240-60 480 60 720 0s480 60 720 0M0 260c240-60 480 60 720 0s480 60 720 0M0 360c240-60 480 60 720 0s480 60 720 0" />
+        </g>
+      </g>
+      <g fill="#fff" fill-opacity=".1"><circle cx="980" cy="120" r="6" /><circle cx="1010" cy="200" r="10" /><circle cx="940" cy="260" r="4" /></g>
+    </symbol>
+    <symbol id="corner" viewBox="0 0 330 330">
+      <g fill="none" stroke="#12897b" stroke-opacity=".22" stroke-width="2"><circle cx="165" cy="165" r="60" /><circle cx="165" cy="165" r="110" /><circle cx="165" cy="165" r="160" /></g>
+    </symbol>
+    <symbol id="tick" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+  </defs>
+</svg>
+
+<!-- 1 Cover -->
+<section class="slide dark" style="padding-top: 64px">
+  <svg class="art"><use href="#sea" /></svg>
+  <div class="brand"><svg><use href="#mark-light" /></svg>HVP VENTURES</div>
+  <div class="rel" style="margin-top: 78px">
+    <div class="label" style="color: var(--mint); letter-spacing: .3em">E-brochure · 2026</div>
+    <h1 style="margin-top: 22px; font-size: 76px; font-weight: 800; line-height: 1.08">Agar agar, <em>sourced</em><br />with the diligence<br />of an older firm.</h1>
+    <p style="margin-top: 30px; max-width: 700px; font-size: 21px; line-height: 1.5; color: rgba(255,255,255,.85)">Food, bacteriological and technical grades — documented lot by lot, delivered to buyers worldwide.</p>
+  </div>
+  <div class="label" style="position: absolute; left: 64px; bottom: 44px; color: var(--mint)">Essential ingredients worldwide</div>
+</section>
+
+<!-- 2 Why -->
+<section class="slide">
+  <svg class="corner"><use href="#corner" /></svg>
+  <div class="kicker"><svg><use href="#mark" /></svg>Why HVP Ventures</div>
+  <h2>Young house. <em>Older discipline.</em></h2>
+  <p class="lead">We are a young trading house, and we buy like a careful one: the specification comes first, samples come before commitment, and every lot arrives with its paperwork.</p>
+  <div class="grid c3" style="margin-top: 24px">
+    <div class="card"><span class="badge">01</span><h3>Specification first</h3><p>We start from your target — grade, gel strength, application — not from a price list.</p></div>
+    <div class="card"><span class="badge">02</span><h3>Samples before commitment</h3><p>Samples go to your lab. Test them against your own method, with no obligation.</p></div>
+    <div class="card"><span class="badge">03</span><h3>Documented, every lot</h3><p>A full certificate pack and a batch COA travel with every shipment.</p></div>
+  </div>
+  <div class="label" style="margin-top: 22px">At a glance</div>
+  <div class="stats">
+    <div class="stat"><span class="num">3</span><span>Grades</span></div>
+    <div class="stat"><span class="num">2+</span><span>Standard strengths,<br />plus custom</span></div>
+    <div class="stat"><span class="num">4</span><span>Certifications</span></div>
+  </div>
+  <div class="foot"><span>HVP VENTURES · AGAR AGAR E-BROCHURE 2026</span><b>2</b><span>+91 98996 65331</span></div>
+</section>
+
+<!-- 3 Range -->
+<section class="slide">
+  <svg class="corner"><use href="#corner" /></svg>
+  <div class="kicker"><svg><use href="#mark" /></svg>The range</div>
+  <h2>Three <em>grades.</em></h2>
+  <div class="grid c3" style="margin-top: 30px">
+    <div class="grade"><header class="t-food"><h3>Food</h3><small>GRADE 01</small></header><div class="body"><div class="label">Best for</div><p>Gelling, stabilising and texturizing</p><div class="label">Typical uses</div><ul><li>Confectionery &amp; jellies</li><li>Dairy &amp; desserts</li><li>Bakery fillings &amp; glazes</li><li>Plant-based gelatin alternative</li></ul></div></div>
+    <div class="grade"><header class="t-lab"><h3>Bacteriological</h3><small>GRADE 02</small></header><div class="body"><div class="label">Best for</div><p>Culture media and laboratory use</p><div class="label">Typical uses</div><ul><li>Microbiological culture media</li><li>Diagnostics</li><li>Research &amp; quality-control labs</li></ul></div></div>
+    <div class="grade"><header class="t-tech"><h3>Technical</h3><small>GRADE 03</small></header><div class="body"><div class="label">Best for</div><p>Industrial and non-food uses</p><div class="label">Typical uses</div><ul><li>Industrial formulations</li><li>Specialty, non-food uses</li><li>Custom-specified applications</li></ul></div></div>
+  </div>
+  <div class="callout">Not sure which grade fits? Tell us the application &amp; we will recommend the grade and the strength.</div>
+  <div class="foot"><span>HVP VENTURES · AGAR AGAR E-BROCHURE 2026</span><b>3</b><span>+91 98996 65331</span></div>
+</section>
+
+<!-- 4 Gel strength -->
+<section class="slide">
+  <svg class="corner"><use href="#corner" /></svg>
+  <div class="kicker"><svg><use href="#mark" /></svg>Gel strength, g/cm²</div>
+  <h2>Strength, <em>bespoke.</em></h2>
+  <p class="lead">Gel strength is stated in g/cm² and reported, with the test method, on the COA of every batch.</p>
+  <div class="scale">
+    <div class="scale__labels">
+      <div style="left: 0; transform: none"><div class="label">Minimum limit</div><div class="num" style="font-size: 24px; color: var(--teal-dark)">600 g/cm²</div></div>
+      <div style="left: 50%; top: 22px"><span class="num" style="color: var(--teal-dark)">GS900</span></div>
+      <div style="left: 83.33%; top: 22px"><span class="num">GS1000</span></div>
+    </div>
+    <div class="bar"><i style="left: 0; width: 4px; background: var(--navy)"></i><i style="left: 41.67%; width: 16.66%; background: var(--teal)"></i><i style="left: 66.67%; right: 0; background: var(--navy)"></i></div>
+    <div class="scale__ticks"><span style="left: 0; transform: none">600</span><span style="left: 16.67%">700</span><span style="left: 33.33%">800</span><span style="left: 50%">900</span><span style="left: 66.67%">1000</span><span style="left: 83.33%">1100</span><span style="left: 100%; transform: translateX(-100%)">1200+</span></div>
+    <div class="scale__notes"><div style="left: 50%">900 ± 50</div><div style="left: 83.33%">1000 and firmer</div></div>
+    <div class="dashed">Custom strengths: any target from 600 g/cm² upward, on request</div>
+  </div>
+  <div class="foot"><span>HVP VENTURES · AGAR AGAR E-BROCHURE 2026</span><b>4</b><span>+91 98996 65331</span></div>
+</section>
+
+<!-- 5 Specification -->
+<section class="slide">
+  <svg class="corner"><use href="#corner" /></svg>
+  <div class="kicker"><svg><use href="#mark" /></svg>Specification</div>
+  <h2>Specification, <em>at a glance.</em></h2>
+  <p class="lead" style="margin-top: 10px; font-size: 18px; max-width: none">Reference limits for food-grade agar (EU E406). The batch COA states the actual result for every lot.</p>
+  <table>
+    <thead><tr><th>PARAMETER</th><th>LIMIT</th></tr></thead>
+    <tbody>
+      <tr><th>Gel strength</th><td>900 ± 50 · 1000 and firmer · custom (g/cm²)</td></tr>
+      <tr><th>Loss on drying</th><td>≤ 22 %</td></tr>
+      <tr><th>Total ash</th><td>≤ 6.5 % (dry basis)</td></tr>
+      <tr><th>Acid-insoluble ash</th><td>≤ 0.5 % (dry basis)</td></tr>
+      <tr><th>Water-insoluble matter</th><td>≤ 1 %</td></tr>
+      <tr><th>Arsenic</th><td>≤ 3 mg/kg</td></tr>
+      <tr><th>Lead</th><td>≤ 5 mg/kg</td></tr>
+      <tr><th>Cadmium</th><td>≤ 1 mg/kg</td></tr>
+      <tr><th>Mercury</th><td>≤ 1 mg/kg</td></tr>
+      <tr><th>Starch and gelatin</th><td>Not detectable</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Grade-specific specification sheets available on request.</p>
+  <div class="foot"><span>HVP VENTURES · AGAR AGAR E-BROCHURE 2026</span><b>5</b><span>+91 98996 65331</span></div>
+</section>
+
+<!-- 6 Compliance -->
+<section class="slide">
+  <svg class="corner"><use href="#corner" /></svg>
+  <div class="kicker"><svg><use href="#mark" /></svg>Compliance</div>
+  <h2>Every lot, <em>documented.</em></h2>
+  <p class="lead">A full certificate pack and a batch COA travel with every shipment.</p>
+  <div class="grid c2" style="margin-top: 30px">
+    <div class="card cert"><span class="seal"><svg><use href="#tick" /></svg></span><div><h3>FSSC 22000</h3><p>Food safety system certification</p></div></div>
+    <div class="card cert"><span class="seal"><svg><use href="#tick" /></svg></span><div><h3>HACCP</h3><p>Hazard analysis &amp; critical control points</p></div></div>
+    <div class="card cert"><span class="seal"><svg><use href="#tick" /></svg></span><div><h3>Halal</h3><p>Halal-compliant supply</p></div></div>
+    <div class="card cert"><span class="seal"><svg><use href="#tick" /></svg></span><div><h3>Kosher</h3><p>Kosher-compliant supply</p></div></div>
+  </div>
+  <div class="ship"><div class="label">In every shipment</div><ul><li>Full certificate pack</li><li>Batch COA — results and test method for the lot</li></ul></div>
+  <div class="foot"><span>HVP VENTURES · AGAR AGAR E-BROCHURE 2026</span><b>6</b><span>+91 98996 65331</span></div>
+</section>
+
+<!-- 7 Closing -->
+<section class="slide dark" style="padding-top: 64px">
+  <svg class="art"><use href="#sea" /></svg>
+  <div class="brand"><svg><use href="#mark-light" /></svg>HVP VENTURES</div>
+  <div class="rel">
+    <h2 style="margin-top: 44px; font-size: 68px">Begin with a <em>specification.</em></h2>
+    <p style="margin-top: 16px; font-size: 21px; color: rgba(255,255,255,.85)">We will place samples in your lab, with no obligation.</p>
+    <div class="steps">
+      <div class="step"><span class="badge">01</span><h3>Share your brief</h3><p>Grade, strength, volume, destination port.</p></div>
+      <div class="step"><span class="badge">02</span><h3>Samples to your lab</h3><p>Test them your way.</p></div>
+      <div class="step"><span class="badge">03</span><h3>Approve and quote</h3><p>We quote for your volume and port.</p></div>
+      <div class="step"><span class="badge">04</span><h3>Ship with documents</h3><p>Certificate pack and batch COA.</p></div>
+    </div>
+  </div>
+  <div class="contact"><div><small>FOUNDER</small><strong>Harshvardhan Pandey</strong></div><div>+91 98996 65331<br />red.ventures26@gmail.com</div></div>
+</section>
+
+</body>
+</html>

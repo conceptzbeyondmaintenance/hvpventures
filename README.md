@@ -17,6 +17,9 @@ npm run build    # outputs to dist/
 - `src/data/content.js` — all copy, products, specs, FAQs and contact details
 - `src/styles/main.css` — design tokens, base reset and all site styles (fonts are linked in `index.html`)
 - `public/hvp-ventures-agar-agar-e-brochure-2026.pdf` — downloadable brochure
+- `brochure/brochure.html` — source for that PDF (7 slides, 16:9). Re-export with headless Chrome:
+  `chrome --headless=new --no-pdf-header-footer --virtual-time-budget=6000 --print-to-pdf=public/hvp-ventures-agar-agar-e-brochure-2026.pdf brochure/brochure.html`,
+  then update the file size shown in `BrochureGateway.vue`
 
 ## Placeholders carried over from the design
 

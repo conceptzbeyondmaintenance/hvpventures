@@ -21,7 +21,7 @@ defineProps({ tint: { type: Boolean, default: false } })
           <h2>HVP Ventures agar agar e-brochure 2026</h2>
           <p>Download the product and trade reference brochure as a PDF.</p>
           <div class="brochure__actions">
-            <a class="button" :href="BROCHURE_URL" :download="BROCHURE_FILENAME"><Icon name="download" />Download PDF <small>207 KB</small></a>
+            <a class="button" :href="BROCHURE_URL" :download="BROCHURE_FILENAME"><Icon name="download" />Download PDF <small>598 KB</small></a>
             <AppLink to="contact" class="button button--ghost">Request a sample</AppLink>
           </div>
         </div>
