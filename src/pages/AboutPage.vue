@@ -4,7 +4,7 @@ import PageHero from '../components/PageHero.vue'
 import SectionLabel from '../components/SectionLabel.vue'
 import BrochureGateway from '../components/BrochureGateway.vue'
 import QuotationBand from '../components/QuotationBand.vue'
-import { CONTACT, principles, certifications } from '../data/content.js'
+import { CONTACT, ABOUT_IMAGE, principles, certifications } from '../data/content.js'
 </script>
 
 <template>
@@ -26,11 +26,14 @@ import { CONTACT, principles, certifications } from '../data/content.js'
         </article>
       </div>
 
-      <div class="prose" style="margin-top: 44px">
+      <div class="split" style="margin-top: 56px">
+        <img class="photo" :src="ABOUT_IMAGE" alt="Seaweed farmer carrying the harvest at sunset" width="1200" height="800" loading="lazy" decoding="async" />
+        <div>
         <SectionLabel>At origin</SectionLabel>
-        <h2>Asian agar, carrageenan and raw seaweed sourced at origin.</h2>
+        <h2 style="margin-bottom: 14px">Asian agar, carrageenan and raw seaweed sourced at origin.</h2>
         <p>Our hydrocolloids are sourced across established Asian supply markets. We work with experienced manufacturers in Asia and supply buyers all over the world.</p>
         <p>Each lot is supplied with a certificate of analysis that states its specifications and details like gel strength, moisture and ash. Products are sold on FOB or CIF terms as per the specifications, so please <AppLink to="contact">request a quotation</AppLink> for current terms.</p>
+        </div>
       </div>
 
       <div class="founder" style="margin-top: 32px">

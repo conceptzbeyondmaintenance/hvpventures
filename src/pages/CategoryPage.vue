@@ -25,6 +25,8 @@ const data = computed(() => categories[props.id])
 
   <section class="section">
     <div class="container">
+      <img class="banner" :src="data.banner.src" :alt="data.banner.alt" width="1400" height="440" decoding="async" />
+
       <div v-if="data.body" class="prose">
         <p v-for="p in data.body" :key="p">{{ p }}</p>
       </div>
@@ -45,7 +47,8 @@ const data = computed(() => categories[props.id])
       </div>
 
       <div v-if="data.highlight" class="detail__block">
-        <article class="entry">
+        <article class="entry entry--photo">
+          <img class="entry__img" :src="data.highlight.image.src" :alt="data.highlight.image.alt" width="560" height="420" loading="lazy" decoding="async" />
           <h3>{{ data.highlight.title }}</h3>
           <p>{{ data.highlight.copy }}</p>
           <div class="chips"><span v-for="a in data.highlight.advantages" :key="a" class="chip">{{ a }}</span></div>
@@ -56,7 +59,8 @@ const data = computed(() => categories[props.id])
       </div>
 
       <div v-if="data.items" class="detail__block entries">
-        <article v-for="item in data.items" :key="item.name" class="entry">
+        <article v-for="item in data.items" :key="item.name" :class="['entry', { 'entry--photo': item.image }]">
+          <img v-if="item.image" class="entry__img" :src="item.image.src" :alt="item.image.alt" width="560" height="420" loading="lazy" decoding="async" />
           <span class="entry__tag">{{ item.subtitle }}</span>
           <h3>{{ item.name }}</h3>
           <p v-if="item.application" class="entry__application"><strong>Application:</strong> {{ item.application }}</p>
@@ -82,7 +86,7 @@ const data = computed(() => categories[props.id])
       </div>
       <div class="grid grid--4">
         <article v-for="app in applications" :key="app.title" class="feature">
-          <span class="icon-badge"><Icon :name="app.icon" /></span>
+          <img class="feature__img" :src="app.image" :alt="app.alt" width="800" height="600" loading="lazy" decoding="async" />
           <h3>{{ app.title }}</h3>
           <p>{{ app.copy }}</p>
         </article>

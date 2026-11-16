@@ -1,3 +1,5 @@
+const img = (name) => new URL(`../assets/images/${name}.webp`, import.meta.url).href
+
 export const BROCHURE_URL = import.meta.env.BASE_URL + 'hvp-ventures-agar-agar-e-brochure-2026.pdf'
 export const BROCHURE_FILENAME = 'HVP-Ventures-Agar-Agar-E-Brochure-2026.pdf'
 
@@ -31,22 +33,22 @@ export const catalogNote = 'For all products — packaging in multi-walled paper
 
 export const products = [
   {
-    icon: 'food', tone: 'tone-food', tag: 'E406 · HS 1302.31', title: 'Agar powder', page: 'agar-powder', link: 'Agar powder grades',
+    image: img('product-agar-powder'), icon: 'food', tone: 'tone-food', tag: 'E406 · HS 1302.31', title: 'Agar powder', page: 'agar-powder', link: 'Agar powder grades',
     description: 'Agar powder for food manufacturers, confectionery producers and technical buyers who need consistent gel strength. Grades from GS600 to GS1000.',
     chips: ['GS600', 'GS700', 'GS800', 'GS900', 'GS1000'],
   },
   {
-    icon: 'drop', tone: 'tone-lab', tag: 'HS 1302.39', title: 'Refined and semi-refined carrageenan', page: 'carrageenan', link: 'Carrageenan grades',
+    image: img('product-carrageenan'), icon: 'drop', tone: 'tone-lab', tag: 'HS 1302.39', title: 'Refined and semi-refined carrageenan', page: 'carrageenan', link: 'Carrageenan grades',
     description: 'Refined kappa carrageenan for strong, stable gel systems, and semi-refined kappa and iota carrageenan for brewery and pet food applications.',
     chips: ['RC Kappa', 'SRC Kappa (Brewery)', 'SRC Kappa (Pet Food)', 'SRC Iota'],
   },
   {
-    icon: 'box', tone: 'tone-tech', tag: 'HS 1302.39', title: 'Custom blended carrageenan systems', page: 'carrageenan-blends', link: 'Carrageenan blends',
+    image: img('product-blends'), icon: 'box', tone: 'tone-tech', tag: 'HS 1302.39', title: 'Custom blended carrageenan systems', page: 'carrageenan-blends', link: 'Carrageenan blends',
     description: 'Blends for beverages and desserts, dairy, cheese, meat and processed meat, and personal care, each with its own specification and recommended dosage.',
     chips: ['Beverages and desserts', 'Dairy', 'Cheese', 'Meat and processed meat', 'Personal care'],
   },
   {
-    icon: 'leaf', tone: 'tone-sea', tag: 'HS 1212.21', title: 'Semi-processed seaweed', page: 'semi-processed-seaweed', link: 'Semi-processed seaweed',
+    image: img('product-seaweed'), icon: 'leaf', tone: 'tone-sea', tag: 'HS 1212.21', title: 'Semi-processed seaweed', page: 'semi-processed-seaweed', link: 'Semi-processed seaweed',
     description: 'Alkali-treated Eucheuma cottonii and spinosum chips for kappa and iota carrageenan extraction, with documentation and COA per shipment.',
     chips: ['Alkali-Treated Cottonii (ATC)', 'Alkali-Treated Spinosum (ATS)'],
   },
@@ -246,6 +248,31 @@ export const categories = {
   },
 }
 
+const banners = {
+  'agar-powder': ['banner-agar-powder', 'Close-up of fine cream-coloured powder'],
+  carrageenan: ['banner-carrageenan', 'Stainless steel tanks in a brewery'],
+  'carrageenan-blends': ['banner-blends', 'Bowls of yogurt topped with fruit'],
+  'semi-processed-seaweed': ['banner-seaweed', 'Aerial view of seaweed drying on racks'],
+}
+const itemImages = {
+  'Cold Pudding and Whipping Cream Blend': ['item-cold-pudding', 'Set milk pudding with fruit sauce'],
+  'Ice Cream and Gelato Blend': ['item-ice-cream', 'Scoops of ice cream in bowls'],
+  'Jelly and Pudding Blend': ['item-jelly', 'Bowl of jelly dessert'],
+  'Yogurt and Cream Cheese Blend': ['item-yogurt', 'Bowls of yogurt topped with fruit'],
+  'Hard Gel Air Freshener Blend': ['item-air-freshener', 'Home fragrance diffuser beside a small plant'],
+  'Toothpaste and Lotion Blend': ['item-lotion', 'Jar of cream on a display stand'],
+  'Alkali-Treated Cottonii (ATC)': ['item-atc', 'Farmer carrying baskets of harvested seaweed'],
+  'Alkali-Treated Spinosum (ATS)': ['chain-harvest', 'Seaweed being gathered by hand on a tidal flat'],
+}
+for (const [id, category] of Object.entries(categories)) {
+  const [name, alt] = banners[id]
+  category.banner = { src: img(name), alt }
+  for (const item of category.items || []) {
+    if (itemImages[item.name]) item.image = { src: img(itemImages[item.name][0]), alt: itemImages[item.name][1] }
+  }
+}
+categories['agar-powder'].highlight.image = { src: img('item-agar-gels'), alt: 'Powder being handled in a processing room' }
+
 const l = (to, text) => ({ to, text })
 
 export const faqs = [
@@ -276,10 +303,19 @@ export const stats = [
 ]
 
 export const applications = [
-  { icon: 'food', title: 'Food and confectionery', copy: 'Jellies, desserts, vegan gummies.', page: 'agar-powder' },
-  { icon: 'lab', title: 'Bacteriological', copy: 'Plate count, selective and differential culture media.', page: 'agar-powder' },
-  { icon: 'drop', title: 'Cosmetics and industry', copy: 'Cosmetic, personal care and industrial gel formulations.', page: 'agar-powder' },
-  { icon: 'pill', title: 'Pharma and nutraceutical', copy: 'Gelling, thickening and suspending excipient in selected formulations.', page: 'agar-powder' },
+  { image: img('app-food'), alt: 'Plate of moulded fruit jellies', icon: 'food', title: 'Food and confectionery', copy: 'Jellies, desserts, vegan gummies.', page: 'agar-powder' },
+  { image: img('app-bacteriological'), alt: 'Petri dishes with culture media', icon: 'lab', title: 'Bacteriological', copy: 'Plate count, selective and differential culture media.', page: 'agar-powder' },
+  { image: img('app-cosmetics'), alt: 'Row of lipsticks', icon: 'drop', title: 'Cosmetics and industry', copy: 'Cosmetic, personal care and industrial gel formulations.', page: 'agar-powder' },
+  { image: img('app-pharma'), alt: 'Sample vials in a laboratory autosampler', icon: 'pill', title: 'Pharma and nutraceutical', copy: 'Gelling, thickening and suspending excipient in selected formulations.', page: 'agar-powder' },
+]
+
+export const ABOUT_IMAGE = img('about-harvest')
+
+export const supplyChain = [
+  { image: img('chain-harvest'), alt: 'Seaweed being gathered by hand on a tidal flat', title: 'Harvest', copy: 'Red seaweed gathered at origin in Asia.' },
+  { image: img('chain-drying'), alt: 'Aerial view of seaweed drying on racks', title: 'Drying', copy: 'Dried and sorted before processing.' },
+  { image: img('chain-processing'), alt: 'Stainless steel filter press in a processing plant', title: 'Processing', copy: 'Extracted, filtered and milled to specification.' },
+  { image: img('chain-shipping'), alt: 'Container ship loading at port', title: 'Shipping', copy: 'Shipped on FOB or CIF terms with batch COA.' },
 ]
 
 export const principles = [

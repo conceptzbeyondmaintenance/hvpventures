@@ -5,6 +5,7 @@ import Icon from '../components/Icon.vue'
 import SeaArt from '../components/SeaArt.vue'
 import WaveDivider from '../components/WaveDivider.vue'
 import SectionLabel from '../components/SectionLabel.vue'
+import SupplyChain from '../components/SupplyChain.vue'
 import BrochureGateway from '../components/BrochureGateway.vue'
 import QuotationBand from '../components/QuotationBand.vue'
 import { products, stats, applications, certifications, principles, processSteps, catalogNote, CONTACT } from '../data/content.js'
@@ -66,7 +67,7 @@ const heroFacts = [
       </div>
       <div class="grid grid--4">
         <article v-for="product in products" :key="product.title" class="card">
-          <div :class="['product-card__visual', product.tone]"><Icon :name="product.icon" /><span>{{ product.tag }}</span></div>
+          <div :class="['product-card__visual', 'product-card__visual--photo', product.tone]" :style="{ backgroundImage: `url(${product.image})` }"><Icon :name="product.icon" /><span>{{ product.tag }}</span></div>
           <div class="card__body">
             <h3>{{ product.title }}</h3>
             <p>{{ product.description }}</p>
@@ -85,7 +86,7 @@ const heroFacts = [
       </div>
       <div class="grid grid--4">
         <AppLink v-for="app in applications" :key="app.title" :to="app.page" class="feature">
-          <span class="icon-badge"><Icon :name="app.icon" /></span>
+          <img class="feature__img" :src="app.image" :alt="app.alt" width="800" height="600" loading="lazy" decoding="async" />
           <h3>{{ app.title }}</h3>
           <p>{{ app.copy }}</p>
         </AppLink>
@@ -134,7 +135,9 @@ const heroFacts = [
     </div>
   </section>
 
-  <section class="section">
+  <SupplyChain />
+
+  <section class="section section--tint">
     <div class="container">
       <div class="section-head section-head--center">
         <SectionLabel>Quality and documentation</SectionLabel>
@@ -150,7 +153,7 @@ const heroFacts = [
     </div>
   </section>
 
-  <section class="section section--tint">
+  <section class="section">
     <div class="container">
       <div class="section-head section-head--center">
         <SectionLabel>How ordering works</SectionLabel>
@@ -166,7 +169,7 @@ const heroFacts = [
     </div>
   </section>
 
-  <BrochureGateway />
+  <BrochureGateway tint />
 
   <QuotationBand title="Begin with a specification." action-label="Request a quotation">
     We will place samples in your lab, with no obligation. Founder Harshvardhan Pandey · WhatsApp <AppLink :to="CONTACT.whatsappUrl">{{ CONTACT.whatsapp }}</AppLink> · <AppLink :to="`mailto:${CONTACT.email}`">{{ CONTACT.email }}</AppLink>

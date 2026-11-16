@@ -15,7 +15,7 @@ import { products, catalogNote } from '../data/content.js'
   <section class="section">
     <div class="container">
       <article v-for="product in products" :key="product.title" class="product-row">
-        <div :class="['product-card__visual', product.tone]"><Icon :name="product.icon" /><span>{{ product.tag }}</span></div>
+        <div :class="['product-card__visual', 'product-card__visual--photo', product.tone]" :style="{ backgroundImage: `url(${product.image})` }"><Icon :name="product.icon" /><span>{{ product.tag }}</span></div>
         <div class="product-row__body">
           <h2>{{ product.title }}</h2>
           <p>{{ product.description }}</p>
