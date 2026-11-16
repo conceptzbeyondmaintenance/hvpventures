@@ -21,7 +21,6 @@ const isProduct = (page) => page === 'products' || products.some((p) => p.page =
         <AppLink :to="`mailto:${CONTACT.email}`"><Icon name="mail" />{{ CONTACT.email }}</AppLink>
       </div>
       <div class="topbar__group topbar__group--secondary">
-        <span>Agar agar E406 · GS600 to GS1000</span>
         <BrochureAction><Icon name="download" />E-brochure 2026</BrochureAction>
       </div>
     </div>
@@ -30,7 +29,7 @@ const isProduct = (page) => page === 'products' || products.some((p) => p.page =
     <div class="container header__inner">
       <AppLink to="home" class="wordmark">
         <BrandMark />
-        <span class="wordmark__text"><strong>HVP Ventures</strong><small>Agar agar exporter</small></span>
+        <span class="wordmark__text"><strong>HVP Ventures</strong><small>Hydrocolloids trading</small></span>
       </AppLink>
       <button class="nav-toggle" type="button" :aria-expanded="open" aria-controls="main-nav" aria-label="Toggle navigation" @click="open = !open"><span /></button>
       <nav id="main-nav" :class="['nav', { open }]" aria-label="Main navigation">

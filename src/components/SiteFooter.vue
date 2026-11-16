@@ -14,15 +14,15 @@ const year = new Date().getFullYear()
       <div>
         <AppLink to="home" class="wordmark">
           <BrandMark />
-          <span class="wordmark__text"><strong>HVP Ventures</strong><small>Agar agar exporter</small></span>
+          <span class="wordmark__text"><strong>HVP Ventures</strong><small>Hydrocolloids trading</small></span>
         </AppLink>
-        <p class="footer__about">Agar agar supplier and exporter of food grade, bacteriological and technical agar agar (E406), GS600 to GS1000.</p>
+        <p class="footer__about">India-based hydrocolloids trading company. Agar powder, carrageenan, custom blended carrageenan systems and semi-processed seaweed, sourced at origin in Asia.</p>
       </div>
       <div>
         <h4>Products</h4>
         <ul>
           <li v-for="p in products" :key="p.page"><AppLink :to="p.page">{{ p.title }}</AppLink></li>
-          <li><AppLink to="products">Full agar range</AppLink></li>
+          <li><AppLink to="products">Product catalogue</AppLink></li>
         </ul>
       </div>
       <div>
@@ -46,7 +46,7 @@ const year = new Date().getFullYear()
     </div>
     <div class="container footer__bottom">
       <span>© {{ year }} HVP Ventures. All rights reserved.</span>
-      <span>HS code 1302.31 · Food additive E406</span>
+      <span>Agar agar E406 · Carrageenan E407</span>
     </div>
   </footer>
 </template>

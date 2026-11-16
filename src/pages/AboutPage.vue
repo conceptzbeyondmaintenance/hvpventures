@@ -1,60 +1,36 @@
 <script setup>
+import AppLink from '../components/AppLink.vue'
 import PageHero from '../components/PageHero.vue'
 import SectionLabel from '../components/SectionLabel.vue'
 import BrochureGateway from '../components/BrochureGateway.vue'
 import QuotationBand from '../components/QuotationBand.vue'
-import { CONTACT } from '../data/content.js'
-
-const facts = [
-  ['3', 'Grades', 'Food, bacteriological, technical'],
-  ['2+', 'Standard gel strengths', 'Plus custom to order'],
-  ['4', 'Certifications', 'FSSC 22000, HACCP, Halal, Kosher'],
-  ['2', 'Export regions', 'Europe, USA'],
-]
-const specs = [
-  ['HS code', '1302.31 (13023100)'],
-  ['Food additive', 'E406'],
-  ['Halal certificate', '[number, issuing body, expiry]'],
-  ['Kosher certificate', '[number, issuing body, expiry]'],
-]
+import { CONTACT, principles, certifications } from '../data/content.js'
 </script>
 
 <template>
-  <PageHero label="About HVP Ventures" lead="HVP Ventures is an India-based agar agar trading company. We source E406 food additive grades across Asia — Indonesia, Japan and India — and supply them in bulk to buyers in Europe and the USA. [City] is our registered base.">
-    Who we are and how we source.
+  <PageHero label="About HVP Ventures" lead="HVP Ventures is an India-based hydrocolloids trading company. We are a young trading house, and we buy like a careful one: the specification comes first, samples come before commitment, and every lot arrives with its paperwork.">
+    Young house. Older discipline.
   </PageHero>
-
-  <section class="stats">
-    <div class="container">
-      <div class="stats__grid">
-        <div v-for="[value, label, note] in facts" :key="label" class="stat"><strong>{{ value }}</strong><span>{{ label }}</span><small>{{ note }}</small></div>
-      </div>
-    </div>
-  </section>
 
   <section class="section">
     <div class="container">
       <div class="grid grid--3">
-        <article class="feature">
-          <span class="feature__num">01 · THE FIRM</span>
-          <h3>Who we are.</h3>
-          <p>We are a young trading house and we buy with the discipline of an established one. We start from the buyer’s specification, not from a price list.</p>
+        <article v-for="([, title, copy], i) in principles" :key="title" class="feature">
+          <span class="feature__num">0{{ i + 1 }}</span>
+          <h3>{{ title }}</h3>
+          <p>{{ copy }}</p>
+          <template v-if="i === 2">
+            <div class="chips"><span v-for="c in certifications" :key="c" class="chip">{{ c }}</span></div>
+            <p style="margin-top: 14px">Halal and kosher status is confirmed per product by a current certificate.</p>
+          </template>
         </article>
-        <article class="feature">
-          <span class="feature__num">02 · SOURCING AND EXPORT</span>
-          <h3>Asian sourcing and export markets.</h3>
-          <p>Our agar agar is sourced from Gracilaria red seaweed through established manufacturers in Indonesia, Japan and India. We select suppliers against the required grade, gel strength, application and documentation.</p>
-          <div class="chips"><span class="chip">Europe</span><span class="chip">USA</span></div>
-          <p style="margin-top: 14px">We supply buyers across Europe and the USA.</p>
-        </article>
-        <article class="feature">
-          <span class="feature__num">03 · CERTIFICATES</span>
-          <h3>Specification and certificates.</h3>
-          <dl>
-            <div v-for="[label, value] in specs" :key="label"><dt>{{ label }}</dt><dd>{{ value }}</dd></div>
-          </dl>
-          <p>Halal and kosher status is backed by a current certificate, provided on request.</p>
-        </article>
+      </div>
+
+      <div class="prose" style="margin-top: 44px">
+        <SectionLabel>At origin</SectionLabel>
+        <h2>Asian agar, carrageenan and raw seaweed sourced at origin.</h2>
+        <p>Our hydrocolloids are sourced across established Asian supply markets. We work with experienced manufacturers in Asia and supply buyers all over the world.</p>
+        <p>Each lot is supplied with a certificate of analysis that states its specifications and details like gel strength, moisture and ash. Products are sold on FOB or CIF terms as per the specifications, so please <AppLink to="contact">request a quotation</AppLink> for current terms.</p>
       </div>
 
       <div class="founder" style="margin-top: 32px">

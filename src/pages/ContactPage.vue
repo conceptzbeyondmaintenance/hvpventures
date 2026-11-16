@@ -5,14 +5,14 @@ import Icon from '../components/Icon.vue'
 import PageHero from '../components/PageHero.vue'
 import SectionLabel from '../components/SectionLabel.vue'
 import BrochureGateway from '../components/BrochureGateway.vue'
-import { CONTACT, processSteps } from '../data/content.js'
+import { CONTACT, processSteps, products } from '../data/content.js'
 
 const sent = ref(false)
 const submit = () => { sent.value = true }
 </script>
 
 <template>
-  <PageHero label="Contact" lead="HVP Ventures is an agar agar supplier in India, with product sourced at origin in Asia and supplied worldwide. Use the form below to request an agar agar quotation or an agar agar sample. Include your grade, quantity and destination port.">
+  <PageHero label="Contact" lead="Use the form below to request a quotation or a sample. Include your specification, quantity and destination port.">
     Agar Agar Supplier in India: Request a Quotation or Sample
   </PageHero>
 
@@ -38,10 +38,14 @@ const submit = () => { sent.value = true }
             <label><span>Company name</span><input required autocomplete="organization" /></label>
             <label><span>Corporate email</span><input type="email" autocomplete="email" /></label>
             <label><span>Destination country</span><input required autocomplete="country-name" /></label>
-            <label><span>Request type</span><select><option>Quotation</option><option>Sample</option></select></label>
-            <label><span>Agar grade</span><select><option>Food grade</option><option>Bacteriological grade</option><option>Technical grade</option></select></label>
+            <fieldset class="radio-group">
+              <legend>Request type</legend>
+              <label><input type="radio" name="request-type" value="Quotation" checked />Quotation</label>
+              <label><input type="radio" name="request-type" value="Sample" />Sample</label>
+            </fieldset>
+            <label><span>Product</span><select><option v-for="p in products" :key="p.page">{{ p.title }}</option></select></label>
           </div>
-          <label><span>Estimated quantity (25 kg bags or MT)</span><input /></label>
+          <label><span>Estimated quantity</span><input /></label>
           <label><span>Specification wanted</span><input required /></label>
           <label><span>Message</span><textarea rows="4" /></label>
           <button class="button" type="submit">Request a quotation<Icon name="arrow" /></button>

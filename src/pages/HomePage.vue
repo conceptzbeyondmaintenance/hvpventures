@@ -7,19 +7,14 @@ import WaveDivider from '../components/WaveDivider.vue'
 import SectionLabel from '../components/SectionLabel.vue'
 import BrochureGateway from '../components/BrochureGateway.vue'
 import QuotationBand from '../components/QuotationBand.vue'
-import { products, stats, applications, certifications, processSteps, CONTACT } from '../data/content.js'
+import { products, stats, applications, certifications, principles, processSteps, catalogNote, CONTACT } from '../data/content.js'
 
-const principles = [
-  ['target', 'Specification first', 'We start from your target — grade, gel strength and application — not from a price list.'],
-  ['lab', 'Samples before commitment', 'Samples go to your lab. Test them against your own method, with no obligation.'],
-  ['doc', 'Documented, every lot', 'A full certificate pack and a batch COA travel with every shipment.'],
-]
 const heroFacts = [
-  ['Grades', 'Food · Bacteriological · Technical'],
-  ['Gel strength', 'GS600 to GS1000 g/cm²'],
+  ['Agar powder', 'GS600 to GS1000'],
+  ['Carrageenan', 'Refined · Semi-refined · Blends'],
+  ['Seaweed', 'Semi-processed ATC · ATS'],
   ['Packaging', '25 kg bags'],
   ['Trade terms', 'FOB or CIF'],
-  ['Sourced from', 'Indonesia · Japan · India'],
 ]
 </script>
 
@@ -30,7 +25,7 @@ const heroFacts = [
       <div>
         <div class="eyebrow">Essential ingredients worldwide</div>
         <h1>Agar agar supplier and exporter, <em>sourced at origin in Asia</em></h1>
-        <p class="hero__lead">HVP Ventures is an agar agar trading company from India. We source food grade, bacteriological and technical agar agar (E406) from Asia and supply bulk orders to food manufacturers, laboratories and industrial buyers worldwide.</p>
+        <p class="hero__lead">HVP Ventures is an Indian trading company. We source food grade, bacteriological and technical agar agar (E406) from Asia and supply bulk orders to food manufacturers, laboratories and industrial buyers worldwide.</p>
         <div class="hero__actions">
           <AppLink to="contact" class="button button--light">Request a quotation<Icon name="arrow" /></AppLink>
           <AppLink to="products" class="button button--outline-light">View products</AppLink>
@@ -42,7 +37,7 @@ const heroFacts = [
         </ul>
       </div>
       <aside class="spec-card" aria-label="Supply at a glance">
-        <div class="spec-card__title">Supply at a glance <span>E406</span></div>
+        <div class="spec-card__title">Supply at a glance <span>E406 · E407</span></div>
         <dl>
           <div v-for="[k, v] in heroFacts" :key="k"><dt>{{ k }}</dt><dd>{{ v }}</dd></div>
         </dl>
@@ -66,10 +61,10 @@ const heroFacts = [
     <div class="container">
       <div class="section-head section-head--center">
         <SectionLabel>Our products</SectionLabel>
-        <h2>Agar agar for food, bacteriological and technical use</h2>
-        <p>Three product lines, each available from GS600 to GS1000 gel strength.</p>
+        <h2>Product catalogue</h2>
+        <p>{{ catalogNote }}</p>
       </div>
-      <div class="grid grid--3">
+      <div class="grid grid--4">
         <article v-for="product in products" :key="product.title" class="card">
           <div :class="['product-card__visual', product.tone]"><Icon :name="product.icon" /><span>{{ product.tag }}</span></div>
           <div class="card__body">
@@ -103,7 +98,7 @@ const heroFacts = [
       <div>
         <SectionLabel>Why HVP Ventures</SectionLabel>
         <h2>Young house. Older discipline.</h2>
-        <p class="lead" style="margin-top: 14px">We are a young trading house, and we buy like a careful one: the specification comes first, samples come before commitment, and every lot arrives with its paperwork.</p>
+        <p class="lead" style="margin-top: 14px">HVP Ventures is an India-based hydrocolloids trading company. We are a young trading house, and we buy like a careful one: the specification comes first, samples come before commitment, and every lot arrives with its paperwork.</p>
         <ul class="check-list">
           <li v-for="[, title] in principles" :key="title"><Icon name="check" />{{ title }}</li>
         </ul>
@@ -120,21 +115,21 @@ const heroFacts = [
   <section class="section section--aqua">
     <div class="container split">
       <div class="origin-panel">
-        <h3>Bulk agar agar on FOB and CIF terms</h3>
-        <p>Pricing depends on grade, volume and destination.</p>
+        <h3>Bulk hydrocolloids on FOB and CIF terms</h3>
+        <p>Products are sold as per the specifications.</p>
         <dl>
-          <div><dt>Raw material</dt><dd>Gracilaria red seaweed</dd></div>
-          <div><dt>Origins</dt><dd>Indonesia, Japan, India</dd></div>
-          <div><dt>Packaging</dt><dd>25 kg bags</dd></div>
+          <div><dt>Products</dt><dd>Agar, carrageenan, raw seaweed</dd></div>
+          <div><dt>Sourcing</dt><dd>Established Asian supply markets</dd></div>
+          <div><dt>Documents</dt><dd>COA with every lot</dd></div>
           <div><dt>Trade terms</dt><dd>FOB or CIF</dd></div>
-          <div><dt>Export markets</dt><dd>Europe, USA</dd></div>
+          <div><dt>Buyers</dt><dd>Worldwide</dd></div>
         </dl>
       </div>
       <div>
         <SectionLabel>At origin</SectionLabel>
-        <h2>Asian agar agar sourced at origin</h2>
-        <p style="margin-top: 14px">Our agar agar is sourced from Gracilaria red seaweed across established Asian supply markets. We work with experienced agar agar manufacturers in Asia and supply buyers in Europe and the USA.</p>
-        <p>Each lot is supplied with a certificate of analysis that states its gel strength, moisture and ash. Agar agar is sold in 25 kg bags on FOB or CIF terms, so please <AppLink to="contact">request a quotation</AppLink> for current terms.</p>
+        <h2>Asian agar, carrageenan and raw seaweed sourced at origin</h2>
+        <p style="margin-top: 14px">Our hydrocolloids are sourced across established Asian supply markets. We work with experienced manufacturers in Asia and supply buyers all over the world.</p>
+        <p>Each lot is supplied with a certificate of analysis that states its specifications and details like gel strength, moisture and ash. Products are sold on FOB or CIF terms as per the specifications, so please <AppLink to="contact">request a quotation</AppLink> for current terms.</p>
       </div>
     </div>
   </section>
@@ -151,7 +146,7 @@ const heroFacts = [
           <div><strong>{{ c }}</strong><small>Certificate on request</small></div>
         </div>
       </div>
-      <p class="note" style="text-align: center">Halal and kosher status is confirmed per product by a current certificate. See the <AppLink to="about">About page</AppLink> for certificate details.</p>
+      <p class="note" style="text-align: center">Halal and kosher status is confirmed per product by a current certificate.</p>
     </div>
   </section>
 
@@ -159,7 +154,7 @@ const heroFacts = [
     <div class="container">
       <div class="section-head section-head--center">
         <SectionLabel>How ordering works</SectionLabel>
-        <h2>Begin with a specification</h2>
+        <h2>From brief to shipment</h2>
       </div>
       <ol class="steps">
         <li v-for="[number, title, copy] in processSteps" :key="number" class="step">
@@ -173,7 +168,7 @@ const heroFacts = [
 
   <BrochureGateway />
 
-  <QuotationBand title="Request a quotation or sample" action-label="Request an agar agar quotation">
-    Send your grade, quantity and destination port to our trade desk, or reach Harshvardhan Pandey on WhatsApp at <AppLink :to="CONTACT.whatsappUrl">{{ CONTACT.whatsapp }}</AppLink>.
+  <QuotationBand title="Begin with a specification." action-label="Request a quotation">
+    We will place samples in your lab, with no obligation. Founder Harshvardhan Pandey · WhatsApp <AppLink :to="CONTACT.whatsappUrl">{{ CONTACT.whatsapp }}</AppLink> · <AppLink :to="`mailto:${CONTACT.email}`">{{ CONTACT.email }}</AppLink>
   </QuotationBand>
 </template>

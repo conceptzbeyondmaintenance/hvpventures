@@ -20,6 +20,6 @@ import { faqs } from '../data/content.js'
   </section>
   <BrochureGateway tint />
   <QuotationBand title="Still have a question?" action-label="Contact our trade desk">
-    Send your grade, quantity and destination and we will reply with a written quotation.
+    Send your requirement to our trade desk for a quotation.
   </QuotationBand>
 </template>
